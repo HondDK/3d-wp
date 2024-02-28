@@ -1,8 +1,36 @@
 <script lang="ts">
   import { Canvas } from '@threlte/core'
   import Scene from './Scene.svelte'
+
+
+  let autoRotate: boolean = false
+  let enableDamping: boolean = true
+  let rotateSpeed: number = 1
+  let zoomToCursor: boolean = false
+  let zoomSpeed: number = 1
+  let minPolarAngle: number = 0
+  let maxPolarAngle: number = Math.PI
+  let enableZoom: boolean = true
 </script>
 
-<Canvas>
-  <Scene />
-</Canvas>
+<div>
+  <Canvas>
+    <Scene
+      {enableDamping}
+      {autoRotate}
+      {rotateSpeed}
+      {zoomToCursor}
+      {zoomSpeed}
+      {minPolarAngle}
+      {maxPolarAngle}
+      {enableZoom}
+    />
+  </Canvas>
+</div>
+
+<style>
+		div {
+				width: 100%;
+				height: 100dvh;
+		}
+</style>
