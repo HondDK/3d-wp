@@ -3,6 +3,7 @@
   import { OrbitControls, Stars } from '@threlte/extras'
   import Tulips from '$lib/components/models/Tulips.svelte';
 
+
   export let autoRotate: boolean
   export let enableDamping: boolean
   export let rotateSpeed: number
@@ -19,6 +20,7 @@
   makeDefault
   position={[0, 1, 1]}
   fov={90}
+
 >
   <OrbitControls
     {enableDamping}
