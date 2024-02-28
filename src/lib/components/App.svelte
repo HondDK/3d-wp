@@ -3,7 +3,7 @@
   import Scene from './Scene.svelte'
 
 
-  let autoRotate: boolean = false
+  let autoRotate: boolean = true
   let enableDamping: boolean = true
   let rotateSpeed: number = 1
   let zoomToCursor: boolean = false
@@ -13,7 +13,6 @@
   let enableZoom: boolean = true
 </script>
 
-<div>
   <Canvas>
     <Scene
       {enableDamping}
@@ -26,11 +25,4 @@
       {enableZoom}
     />
   </Canvas>
-</div>
 
-<style>
-		div {
-				width: 100%;
-				height: 100dvh;
-		}
-</style>

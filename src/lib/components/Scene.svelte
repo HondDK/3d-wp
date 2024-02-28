@@ -1,6 +1,6 @@
 <script lang="ts">
   import { T } from '@threlte/core'
-  import { OrbitControls } from '@threlte/extras'
+  import { OrbitControls, Stars } from '@threlte/extras'
   import Tulips from '$lib/components/models/Tulips.svelte';
 
   export let autoRotate: boolean
@@ -13,9 +13,12 @@
   export let enableZoom: boolean
 </script>
 
+<Stars />
+
 <T.PerspectiveCamera
   makeDefault
-  position={[0, 3, 10]}
+  position={[0, 1, 1]}
+  fov={90}
 >
   <OrbitControls
     {enableDamping}
@@ -28,6 +31,5 @@
     {enableZoom}
   />
 </T.PerspectiveCamera>
-
 
 <Tulips/>
