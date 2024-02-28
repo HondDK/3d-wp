@@ -14,6 +14,8 @@
 <Billboard
   follow={false}
   lockY
+  lockX
+  lockZ
 >
   <HTML
     on:create={({ ref }) => photoRef = ref}

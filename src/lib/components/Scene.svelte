@@ -36,7 +36,7 @@
     cameraRef.position.set(counter, counter, counter);
   }
 
-  const radius = 220;
+  const radius = 240;
 
   $: positions = photos.map((_, index, array) => {
     const angle = (index / array.length) * 2 * Math.PI;
