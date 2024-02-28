@@ -1,12 +1,22 @@
 <script>
   import {Billboard, HTML} from "@threlte/extras";
+  import {onMount} from "svelte";
+  export let position = [0, 0, 0];
+  export let imageSrc = '';
 
-  export let position = [0, 0, 0]
-  export let imageSrc = ''
+  let photoRef
+
+  onMount(() => {
+    photoRef.lookAt(0, 0, 0);
+  });
 </script>
 
-<Billboard follow={false} >
+<Billboard
+  follow={false}
+  lockY
+>
   <HTML
+    on:create={({ ref }) => photoRef = ref}
     scale={15}
     transform
     {position}
