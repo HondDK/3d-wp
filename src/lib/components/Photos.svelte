@@ -1,5 +1,5 @@
 <script>
-  import {Billboard, HTML} from "@threlte/extras";
+  import { HTML } from "@threlte/extras";
   import {onMount} from "svelte";
   export let position = [0, 0, 0];
   export let imageSrc = '';
@@ -11,12 +11,7 @@
   });
 </script>
 
-<Billboard
-  follow={false}
-  lockY
-  lockX
-  lockZ
->
+
   <HTML
     on:create={({ ref }) => photoRef = ref}
     scale={15}
@@ -25,4 +20,9 @@
   >
     <img alt='aboba' src={imageSrc} />
   </HTML>
-</Billboard>
+
+<style>
+		img{
+          backface-visibility: hidden; /*не работает*/
+		}
+</style>
