@@ -18,7 +18,7 @@
     transform
     {position}
   >
-    <img alt='aboba' src={imageSrc} />
+    <img width='250' alt='aboba' src={imageSrc} />
   </HTML>
 
 <style>
