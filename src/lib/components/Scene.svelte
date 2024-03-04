@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { T } from '@threlte/core'
   import { OrbitControls, Stars } from '@threlte/extras';
   import Tulips from '$lib/components/models/Tulips.svelte';
   import { onMount } from 'svelte';
@@ -15,8 +14,8 @@
   export let maxPolarAngle: number
   export let enableZoom: boolean
 
-  const PHOTO_RADIUS = 260
-  const CAMERA_DISTANCE = 160
+  const PHOTO_RADIUS = 400
+  const CAMERA_DISTANCE = 150
 
   const photos = [
 		'./images/1.jpeg',
@@ -33,17 +32,15 @@
             './images/12.jpeg',
             './images/13.jpeg',
             './images/14.jpeg',
-            './images/14.jpeg',
             './images/15.jpeg',
             './images/16.jpeg',
             './images/17.jpeg',
             './images/18.jpeg',
             './images/19.jpeg',
+            './images/21.jpeg',
             './images/20.jpeg',
-            './images/22.jpeg',
             './images/21.jpeg',
             './images/22.jpeg',
-            './images/23.jpeg',
   ]
 
   let counter = 0;
@@ -68,7 +65,7 @@
 
   $: positions = photos.map((_, index, array) => {
     const angle = (index / array.length) * 2 * Math.PI;
-    const yPosition = PHOTO_RADIUS * Math.sin(angle);
+    const yPosition = 12
     return [PHOTO_RADIUS * Math.cos(angle), yPosition, PHOTO_RADIUS * Math.sin(angle)];
   });
 </script>
@@ -94,6 +91,10 @@
     {enableZoom}
   />
 </T.PerspectiveCamera>
+
+{#each photos as photo, index (photo + Math.random())}
+  <Photos position={positions[index]} imageSrc={photo}/>
+{/each}
 
 {#each photos as photo, index (photo + Math.random())}
   <Photos position={positions[index]} imageSrc={photo}/>
