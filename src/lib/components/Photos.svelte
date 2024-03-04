@@ -12,7 +12,7 @@
     photoRef.lookAt(0, 0, 0);
   });
 </script>
-
+;,
 
   <HTML
     on:create={({ ref }) => photoRef = ref}
@@ -27,9 +27,12 @@
   </HTML>
 
 <style>
-  img{
-          backface-visibility: hidden; /*не работает*/
-  }
+		img{
+						-webkit-transform: rotateX(180deg);
+						-webkit-backface-visibility: hidden;
+						-webkit-transform: translate3d(0,0,0);
+
+		}
 
   .loader {
     border: 16px solid black;
