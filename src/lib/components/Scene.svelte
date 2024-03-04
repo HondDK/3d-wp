@@ -1,6 +1,6 @@
 <script lang="ts">
   import { T } from '@threlte/core'
-  import { OrbitControls, Stars } from '@threlte/extras';
+  import { OrbitControls, Stars, useSuspense } from '@threlte/extras';
   import Tulips from '$lib/components/models/Tulips.svelte';
   import { onMount } from 'svelte';
   import { PerspectiveCamera } from 'three';
@@ -92,10 +92,6 @@
     {enableZoom}
   />
 </T.PerspectiveCamera>
-
-{#each photos as photo, index (photo + Math.random())}
-  <Photos position={positions[index]} imageSrc={photo}/>
-{/each}
 
 {#each photos as photo, index (photo + Math.random())}
   <Photos position={positions[index]} imageSrc={photo}/>

@@ -2,6 +2,8 @@
   import { Canvas } from '@threlte/core'
   import Scene from './Scene.svelte'
   import Renderer from '$lib/components/Renderer.svelte';
+  import { useSuspense } from '@threlte/extras';
+  import Loader from '$lib/components/Loader.svelte';
 
 
   let autoRotate: boolean = true
@@ -13,19 +15,31 @@
   let maxPolarAngle: number = Math.PI
   let enableZoom: boolean = true
 
+  const { suspended } = useSuspense()
+  $: console.log($suspended)
 
 </script>
-  <Canvas autoRender={false}>
-    <Renderer/>
-    <Scene
-      {enableDamping}
-      {autoRotate}
-      {rotateSpeed}
-      {zoomToCursor}
-      {zoomSpeed}
-      {minPolarAngle}
-      {maxPolarAngle}
-      {enableZoom}
-    />
-  </Canvas>
+
+  {#if !suspended}
+    <Loader/>
+  {/if}
+
+  {#if suspended}
+    <Canvas autoRender={false}>
+      <Renderer/>
+      <Scene
+        {enableDamping}
+        {autoRotate}
+        {rotateSpeed}
+        {zoomToCursor}
+        {zoomSpeed}
+        {minPolarAngle}
+        {maxPolarAngle}
+        {enableZoom}
+      />
+    </Canvas>
+  {/if}
+
+
+
 
