@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { T } from '@threlte/core'
   import { OrbitControls, Stars } from '@threlte/extras';
   import Tulips from '$lib/components/models/Tulips.svelte';
   import { onMount } from 'svelte';
