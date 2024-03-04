@@ -1,6 +1,6 @@
 <script lang="ts">
   import { T } from '@threlte/core'
-  import { OrbitControls, Stars, useSuspense } from '@threlte/extras';
+  import { OrbitControls, Stars } from '@threlte/extras';
   import Tulips from '$lib/components/models/Tulips.svelte';
   import { onMount } from 'svelte';
   import { PerspectiveCamera } from 'three';
@@ -61,9 +61,7 @@
     cameraRef.position.set(counter, counter, counter);
   }
 
-
   // позиции для фотографий
-
   $: positions = photos.map((_, index, array) => {
     const angle = (index / array.length) * 2 * Math.PI;
     const yPosition = 12

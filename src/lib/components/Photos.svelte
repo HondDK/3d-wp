@@ -2,8 +2,8 @@
   import { HTML } from "@threlte/extras";
   import {onMount} from "svelte";
   export let position = [0, 0, 0];
-  export let imageSrc = '';
 
+  export let imageSrc = ''
   let photoRef
   let isLoading = true; // добавляем переменную состояния
 

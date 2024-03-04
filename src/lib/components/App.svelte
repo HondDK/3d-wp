@@ -2,7 +2,7 @@
   import { Canvas } from '@threlte/core'
   import Scene from './Scene.svelte'
   import Renderer from '$lib/components/Renderer.svelte';
-  import { Suspense, useSuspense } from '@threlte/extras';
+  import { useSuspense } from '@threlte/extras';
   import Loader from '$lib/components/Loader.svelte';
 
 
@@ -20,8 +20,11 @@
 
 </script>
 
-  <Suspense>
-    <Loader slot='fallback'/>
+  {#if !suspended}
+    <Loader/>
+  {/if}
+
+  {#if suspended}
     <Canvas autoRender={false}>
       <Renderer/>
       <Scene
@@ -35,7 +38,7 @@
         {enableZoom}
       />
     </Canvas>
-  </Suspense>
+  {/if}
 
 
 
