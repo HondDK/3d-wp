@@ -71,7 +71,7 @@
 </script>
 
 
-<Suspense>
+<Suspense final>
   <Loader slot='fallback'/>
   <Stars />
 

@@ -19,6 +19,7 @@
   $: console.log($suspended)
 
 </script>
+
     <Canvas autoRender={false}>
       <Renderer/>
       <Scene
@@ -32,6 +33,9 @@
         {enableZoom}
       />
     </Canvas>
+
+
+
 
 
 
