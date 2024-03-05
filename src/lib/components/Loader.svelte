@@ -6,7 +6,7 @@
 </script>
 
 <HTML
-  scale={25}
+  scale={15}
   position={[-10, 250, -80]}
   >
   <div class='container'>
