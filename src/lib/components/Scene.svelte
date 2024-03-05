@@ -1,10 +1,10 @@
 <script lang="ts">
-	import { Stars, Suspense, useSuspense } from '@threlte/extras';
+  import { Stars } from '@threlte/extras';
   import Tulips from '$lib/components/models/Tulips.svelte';
   import Photos from '$lib/components/Photos.svelte';
   import { onMount } from 'svelte';
 
-  const PHOTO_RADIUS = 400
+  const PHOTO_RADIUS = 330
 
   const photos = [
 		'./images/1.jpeg',
@@ -56,15 +56,12 @@
 
 </script>
 
-<Stars />
+<Stars/>
 <Tulips/>
 
 {#if loaded}
   {#each photos as photo, index (photo + Math.random())}
     <Photos position={positions[index]} imageSrc={photo}/>
   {/each}
-{:else}
-  <p>Loading...</p>
 {/if}
 
-```

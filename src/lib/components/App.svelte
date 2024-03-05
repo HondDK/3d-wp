@@ -3,8 +3,9 @@
   import Scene from './Scene.svelte'
   import Renderer from '$lib/components/Renderer.svelte';
   import Loader from '$lib/components/Loader.svelte';
-  import { Suspense } from '@threlte/extras';
+  import { Billboard, Suspense, Text } from '@threlte/extras';
   import Cam from '$lib/components/Cam.svelte';
+  import { T } from '@threlte/core'
 
   let autoRotate: boolean = true
   let enableDamping: boolean = true
@@ -13,11 +14,11 @@
   let zoomSpeed: number = 1
   let minPolarAngle: number = 0
   let maxPolarAngle: number = Math.PI
-  let enableZoom: boolean = true
+  let enableZoom: boolean = false
 
 </script>
 
-    <Canvas autoRender={false}>
+    <Canvas renderMode={'always'} autoRender={false}>
       <Renderer/>
      <Cam
        {enableDamping}
@@ -31,6 +32,9 @@
      />
       <Suspense final>
         <Loader slot='fallback'/>
+          <Billboard lockZ>
+          <Text color='#FFDFDF' position={[-80, 280, 0]} scale={500} text='aboba'/>
+          </Billboard>
         <Scene/>
       </Suspense>
     </Canvas>

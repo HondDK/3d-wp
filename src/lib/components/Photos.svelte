@@ -24,6 +24,8 @@
 </script>
 
     <HTML
+      pointerEvents={'inherit'}
+      sprite
       on:create={({ ref }) => photoRef = ref}
       scale={15}
       transform

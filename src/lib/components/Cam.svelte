@@ -16,7 +16,7 @@
 
   let counter = 0;
 
-  const CAMERA_DISTANCE = 150
+  const CAMERA_DISTANCE = 450;
 
   // отдаление камеры при onMount
   onMount(() => {
@@ -35,8 +35,7 @@
 
   <T.PerspectiveCamera
   makeDefault
-  position={[0, 1, 1]}
-  fov={90}
+  position={[0, 0, 0]}
   on:create={({ ref }) => {
     cameraRef = ref;
   }}
