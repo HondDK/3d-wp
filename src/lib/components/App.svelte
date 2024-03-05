@@ -17,7 +17,7 @@
 
 </script>
 
-    <Canvas style='position: absolute' renderMode={'always'} autoRender={false}>
+    <Canvas renderMode={'always'} autoRender={false}>
       <Renderer/>
      <Cam
        {enableDamping}
