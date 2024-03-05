@@ -1,12 +1,18 @@
 
 <script>
+  import {HTML} from "@threlte/extras";
+
   console.log(123)
 </script>
 
-<div class='container'>
-  <img alt='logo' src='images/logo.svg' />
-  <div class="loader"></div>
-</div>
+<HTML
+  scale={15}
+>
+  <div class='container'>
+    <img alt='logo' src='images/logo.svg' />
+    <div class="loader"></div>
+  </div>
+</HTML>
 
 <style>
   .container{
