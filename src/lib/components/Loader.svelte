@@ -8,7 +8,7 @@
   position={[0,50,0]}
   >
   <div class='container'>
-    <img alt='logo' src='images/logo.svg' />
+    <img fetchpriority='high' alt='logo' src='images/logo.svg' />
     <div class="loader"></div>
   </div>
 </HTML>
