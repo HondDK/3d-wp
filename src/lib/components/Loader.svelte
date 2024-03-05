@@ -1,13 +1,11 @@
 
 <script>
   import {HTML} from "@threlte/extras";
-
-  console.log(123)
 </script>
 
 <HTML
   fullscreen
-  center
+  position={[0,50,0]}
   >
   <div class='container'>
     <img alt='logo' src='images/logo.svg' />
