@@ -39,19 +39,32 @@
     return [PHOTO_RADIUS * Math.cos(angle), yPosition, PHOTO_RADIUS * Math.sin(angle)];
   });
 
+  let loaded = false;
+
+  onMount(async () => {
+    await Promise.all(photos.map(photo => promiseImageLoad(photo)));
+    loaded = true;
+  });
+
+  function promiseImageLoad(imageSrc) {
+    return new Promise((resolve, reject) => {
+    const img = new Image();
+      img.onload = () => resolve(img);
+      img.onerror = reject;
+      img.src = imageSrc;
+    })}
+
 </script>
 
 <Stars />
 <Tulips/>
 
-{#each photos as photo, index (photo + Math.random())}
-  <Suspense let:awaiting>
-    {#if awaiting}
-      <p>Loading...</p>
-    {:else}
-      <Photos position={positions[index]} imageSrc={photo}/>
-    {/if}
-  </Suspense>
-{/each}
+{#if loaded}
+  {#each photos as photo, index (photo + Math.random())}
+    <Photos position={positions[index]} imageSrc={photo}/>
+  {/each}
+{:else}
+  <p>Loading...</p>
+{/if}
 
 ```
