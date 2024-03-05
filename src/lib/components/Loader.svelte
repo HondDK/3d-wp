@@ -6,8 +6,7 @@
 </script>
 
 <HTML
-  scale={15}
-  position={[-10, 250, -80]}
+  fullscreen
   >
   <div class='container'>
     <img alt='logo' src='images/logo.svg' />
