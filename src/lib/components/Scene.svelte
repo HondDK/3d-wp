@@ -44,11 +44,14 @@
 <Stars />
 <Tulips/>
 
-<Suspense final>
-  <div slot='fallback'></div>
-  {#each photos as photo, index (photo + Math.random())}
-    <Photos position={positions[index]} imageSrc={photo}/>
-  {/each}
-</Suspense>
+{#each photos as photo, index (photo + Math.random())}
+  <Suspense let:awaiting>
+    {#if awaiting}
+      <p>Loading...</p>
+    {:else}
+      <Photos position={positions[index]} imageSrc={photo}/>
+    {/if}
+  </Suspense>
+{/each}
 
 ```
