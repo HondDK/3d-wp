@@ -7,6 +7,7 @@
 
 <HTML
   fullscreen
+  center
   >
   <div class='container'>
     <img alt='logo' src='images/logo.svg' />
