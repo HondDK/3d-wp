@@ -70,34 +70,32 @@
   });
 </script>
 
+<T.PerspectiveCamera
+  makeDefault
+  position={[0, 1, 1]}
+  fov={90}
+  on:create={({ ref }) => {
+     cameraRef = ref;
+    }}
+>
+  <OrbitControls
+    {enableDamping}
+    {autoRotate}
+    {rotateSpeed}
+    {zoomToCursor}
+    {zoomSpeed}
+    {minPolarAngle}
+    {maxPolarAngle}
+    {enableZoom}
+  />
+</T.PerspectiveCamera>
 
 <Suspense final>
   <Loader slot='fallback'/>
   <Stars />
 
-  <T.PerspectiveCamera
-    makeDefault
-    position={[0, 1, 1]}
-    fov={90}
-    on:create={({ ref }) => {
-     cameraRef = ref;
-    }}
-  >
-    <OrbitControls
-      {enableDamping}
-      {autoRotate}
-      {rotateSpeed}
-      {zoomToCursor}
-      {zoomSpeed}
-      {minPolarAngle}
-      {maxPolarAngle}
-      {enableZoom}
-    />
-  </T.PerspectiveCamera>
-
   {#each photos as photo, index (photo + Math.random())}
     <Photos position={positions[index]} imageSrc={photo}/>
   {/each}
-
   <Tulips/>
 </Suspense>

@@ -37,8 +37,7 @@
     }
   }
 
-  const suspend = useSuspense()
-  const gltf = suspend(useGltf<GLTFResult>('models/tulips.glb', { useDraco: true }))
+  const gltf = useGltf<GLTFResult>('models/tulips.glb', { useDraco: true })
 
   const component = forwardEventHandlers()
 
