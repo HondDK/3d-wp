@@ -2,9 +2,6 @@
   import { Canvas } from '@threlte/core'
   import Scene from './Scene.svelte'
   import Renderer from '$lib/components/Renderer.svelte';
-  import { Suspense } from '@threlte/extras';
-  import Loader from '$lib/components/Loader.svelte';
-
 
   let autoRotate: boolean = true
   let enableDamping: boolean = true

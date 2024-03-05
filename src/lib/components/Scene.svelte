@@ -91,7 +91,7 @@
 </T.PerspectiveCamera>
 
 <Suspense>
-  <Loader slot='fallback'/>
+  <Loader />
   <Stars slot='fallback' />
 
   {#each photos as photo, index (photo + Math.random())}
