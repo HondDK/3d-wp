@@ -3,7 +3,7 @@
   import Scene from './Scene.svelte'
   import Renderer from '$lib/components/Renderer.svelte';
   import Loader from '$lib/components/Loader.svelte';
-  import { Suspense, Text } from '@threlte/extras';
+  import { Suspense } from '@threlte/extras';
   import Cam from '$lib/components/Cam.svelte';
 
   let autoRotate: boolean = true
@@ -30,18 +30,7 @@
        {enableZoom}
      />
       <Suspense final>
-        <Text
-          position.z={-8}
-          slot="fallback"
-          text="Loading"
-          fontSize={1}
-          color="white"
-          anchorX="50%"
-          anchorY="50%"
-          on:create={({ ref }) => {
-      ref.lookAt(-40, 25, 40)
-    }}
-        />
+        <Loader slot='fallback'/>
         <Scene/>
       </Suspense>
     </Canvas>
