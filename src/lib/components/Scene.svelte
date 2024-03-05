@@ -92,7 +92,7 @@
 
 <Suspense>
   <Loader slot='fallback'/>
-  <Stars />
+  <Stars slot='fallback' />
 
   {#each photos as photo, index (photo + Math.random())}
     <Photos position={positions[index]} imageSrc={photo}/>
