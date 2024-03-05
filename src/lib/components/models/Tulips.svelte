@@ -43,6 +43,7 @@
   const component = forwardEventHandlers()
 
   const pointSize = 500
+
 </script>
 
 <T is={ref} dispose={false} {...$$restProps} bind:this={$component}>

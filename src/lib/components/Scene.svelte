@@ -1,7 +1,8 @@
 <script lang="ts">
-  import { Stars } from '@threlte/extras';
+	import { Stars, useSuspense } from '@threlte/extras';
   import Tulips from '$lib/components/models/Tulips.svelte';
   import Photos from '$lib/components/Photos.svelte';
+  import { onMount } from 'svelte';
 
   const PHOTO_RADIUS = 400
 
@@ -31,19 +32,25 @@
             './images/22.jpeg',
   ]
 
+  let tulipsLoaded = false;
+
   // позиции для фотографий
   $: positions = photos.map((_, index, array) => {
     const angle = (index / array.length) * 2 * Math.PI;
     const yPosition = 12
     return [PHOTO_RADIUS * Math.cos(angle), yPosition, PHOTO_RADIUS * Math.sin(angle)];
   });
+
+  const { suspended } = useSuspense()
 </script>
 
-  <Stars />
-  <Tulips/>
+<Stars />
+<Tulips on:loaded={() => tulipsLoaded = true}/>
 
+{#if suspended}
   {#each photos as photo, index (photo + Math.random())}
     <Photos position={positions[index]} imageSrc={photo}/>
   {/each}
+{/if}
 
 ```
