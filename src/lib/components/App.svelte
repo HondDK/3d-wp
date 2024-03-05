@@ -2,6 +2,8 @@
   import { Canvas } from '@threlte/core'
   import Scene from './Scene.svelte'
   import Renderer from '$lib/components/Renderer.svelte';
+  import Loader from '$lib/components/Loader.svelte';
+  import { Suspense } from '@threlte/extras';
 
   let autoRotate: boolean = true
   let enableDamping: boolean = true
@@ -16,6 +18,8 @@
 
     <Canvas autoRender={false}>
       <Renderer/>
+      <Suspense>
+        <Loader slot='fallback'/>
         <Scene
           {enableDamping}
           {autoRotate}
@@ -26,6 +30,7 @@
           {maxPolarAngle}
           {enableZoom}
         />
+      </Suspense>
     </Canvas>
 
 

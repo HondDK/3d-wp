@@ -1,15 +1,29 @@
 <script>
-  import { HTML } from "@threlte/extras";
+  import {HTML, useSuspense} from "@threlte/extras";
   import {onMount} from "svelte";
   export let position = [0, 0, 0];
 
   export let imageSrc = ''
+  const suspend = useSuspense();
   let photoRef
+
+
+
 
   // при onMount ставим обращение фотографий в центр сцены
   onMount(() => {
     photoRef.lookAt(0, 0, 0);
+    suspend(promiseImageLoad(imageSrc));
   });
+
+  function promiseImageLoad(imageSrc) {
+    return new Promise((resolve, reject) => {
+      const img = new Image();
+      img.onload = () => resolve(img);
+      img.onerror = reject;
+      img.src = imageSrc;
+    });
+  }
 </script>
 ;,
 

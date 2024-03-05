@@ -90,14 +90,11 @@
   />
 </T.PerspectiveCamera>
 
-<Suspense>
-  <Loader />
-  <Stars slot='fallback' />
+  <Stars />
 
   {#each photos as photo, index (photo + Math.random())}
     <Photos position={positions[index]} imageSrc={photo}/>
   {/each}
 
   <Tulips/>
-</Suspense>
 ```
