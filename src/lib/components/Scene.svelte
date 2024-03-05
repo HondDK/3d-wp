@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Stars, useSuspense } from '@threlte/extras';
+	import { Stars, Suspense, useSuspense } from '@threlte/extras';
   import Tulips from '$lib/components/models/Tulips.svelte';
   import Photos from '$lib/components/Photos.svelte';
   import { onMount } from 'svelte';
@@ -39,16 +39,16 @@
     return [PHOTO_RADIUS * Math.cos(angle), yPosition, PHOTO_RADIUS * Math.sin(angle)];
   });
 
-  const { suspended } = useSuspense()
 </script>
 
 <Stars />
 <Tulips/>
 
-{#if suspended}
+<Suspense final>
+  <div slot='fallback'></div>
   {#each photos as photo, index (photo + Math.random())}
     <Photos position={positions[index]} imageSrc={photo}/>
   {/each}
-{/if}
+</Suspense>
 
 ```
