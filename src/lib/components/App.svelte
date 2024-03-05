@@ -29,7 +29,7 @@
        {maxPolarAngle}
        {enableZoom}
      />
-      <Suspense>
+      <Suspense final>
         <Loader slot='fallback'/>
         <Scene/>
       </Suspense>

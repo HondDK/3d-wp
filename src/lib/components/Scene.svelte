@@ -45,9 +45,9 @@
 
   <Stars />
 
-  {#each photos as photo, index (photo + Math.random())}
-    <Photos position={positions[index]} imageSrc={photo}/>
-  {/each}
+  <!--{#each photos as photo, index (photo + Math.random())}-->
+  <!--  <Photos position={positions[index]} imageSrc={photo}/>-->
+  <!--{/each}-->
 
   <Tulips/>
 ```
