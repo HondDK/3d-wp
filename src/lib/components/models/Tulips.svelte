@@ -12,6 +12,7 @@
   import { Group } from 'three'
   import { T, type Props, type Events, type Slots, forwardEventHandlers } from '@threlte/core'
   import { useGltf, useSuspense } from '@threlte/extras';
+  import { fade } from 'svelte/transition';
 
   type $$Props = Props<THREE.Group>
   type $$Events = Events<THREE.Group>
@@ -50,7 +51,7 @@
   {#await gltf}
     <slot name="fallback" />
   {:then gltf}
-    <T.Group  rotation={[-Math.PI / 2, 0, 0]} position={[-10, 250, -80]} scale={0.5}>
+    <T.Group transition={fade} rotation={[-Math.PI / 2, 0, 0]} position={[-10, 250, -80]} scale={0.5}>
       <T.Points scale={pointSize} geometry={gltf.nodes.Object_2.geometry} material={gltf.materials['Scene_-_Root']} />
       <T.Points scale={pointSize} geometry={gltf.nodes.Object_3.geometry} material={gltf.materials['Scene_-_Root']} />
       <T.Points scale={pointSize} geometry={gltf.nodes.Object_4.geometry} material={gltf.materials['Scene_-_Root']} />

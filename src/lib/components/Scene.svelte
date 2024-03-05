@@ -1,8 +1,9 @@
 <script lang="ts">
-  import { Stars } from '@threlte/extras';
+	import { Billboard, Stars, Text } from '@threlte/extras';
   import Tulips from '$lib/components/models/Tulips.svelte';
   import Photos from '$lib/components/Photos.svelte';
   import { onMount } from 'svelte';
+  import { fade } from 'svelte/transition';
 
   const PHOTO_RADIUS = 300
 
@@ -55,6 +56,10 @@
     })}
 
 </script>
+
+<Billboard transition={fade} lockZ>
+  <Text transition={fade} color='#FFDFDF' position={[-80, 280, 0]} scale={500} text='aboba'/>
+</Billboard>
 
 <Stars/>
 <Tulips/>

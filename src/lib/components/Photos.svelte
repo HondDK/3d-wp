@@ -1,6 +1,7 @@
 <script lang="ts">
   import {HTML, useSuspense} from "@threlte/extras";
   import {onMount} from "svelte";
+  import { fade } from 'svelte/transition';
   export let position = [0, 0, 0];
 
   export let imageSrc = ''
@@ -24,6 +25,7 @@
 </script>
 
     <HTML
+      transition={fade}
       pointerEvents={'inherit'}
       sprite
       on:create={({ ref }) => photoRef = ref}

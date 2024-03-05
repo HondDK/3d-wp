@@ -3,9 +3,8 @@
   import Scene from './Scene.svelte'
   import Renderer from '$lib/components/Renderer.svelte';
   import Loader from '$lib/components/Loader.svelte';
-  import { Billboard, Suspense, Text } from '@threlte/extras';
+  import { Suspense } from '@threlte/extras';
   import Cam from '$lib/components/Cam.svelte';
-  import { T } from '@threlte/core'
 
   let autoRotate: boolean = true
   let enableDamping: boolean = true
@@ -32,9 +31,6 @@
      />
       <Suspense final>
         <Loader slot='fallback'/>
-          <Billboard lockZ>
-          <Text color='#FFDFDF' position={[-80, 280, 0]} scale={500} text='aboba'/>
-          </Billboard>
         <Scene/>
       </Suspense>
     </Canvas>
