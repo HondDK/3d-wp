@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import {HTML, useSuspense} from "@threlte/extras";
   import {onMount} from "svelte";
   export let position = [0, 0, 0];
@@ -33,11 +33,9 @@
     </HTML>
 
 <style>
-		img{
-						-webkit-transform: rotateX(180deg);
-						-webkit-backface-visibility: hidden;
-						-webkit-transform: translate3d(0,0,0);
-
-		}
-
+    img{
+        -webkit-transform: rotateX(180deg);
+        -webkit-backface-visibility: hidden;
+        -webkit-transform: translate3d(0,0,0);
+    }
 </style>
