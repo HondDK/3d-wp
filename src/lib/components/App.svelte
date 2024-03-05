@@ -4,6 +4,7 @@
   import Renderer from '$lib/components/Renderer.svelte';
   import Loader from '$lib/components/Loader.svelte';
   import { Suspense } from '@threlte/extras';
+  import Cam from '$lib/components/Cam.svelte';
 
   let autoRotate: boolean = true
   let enableDamping: boolean = true
@@ -18,18 +19,19 @@
 
     <Canvas autoRender={false}>
       <Renderer/>
+     <Cam
+       {enableDamping}
+       {autoRotate}
+       {rotateSpeed}
+       {zoomToCursor}
+       {zoomSpeed}
+       {minPolarAngle}
+       {maxPolarAngle}
+       {enableZoom}
+     />
       <Suspense>
         <Loader slot='fallback'/>
-        <Scene
-          {enableDamping}
-          {autoRotate}
-          {rotateSpeed}
-          {zoomToCursor}
-          {zoomSpeed}
-          {minPolarAngle}
-          {maxPolarAngle}
-          {enableZoom}
-        />
+        <Scene/>
       </Suspense>
     </Canvas>
 

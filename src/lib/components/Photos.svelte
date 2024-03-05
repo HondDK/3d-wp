@@ -7,9 +7,6 @@
   const suspend = useSuspense();
   let photoRef
 
-
-
-
   // при onMount ставим обращение фотографий в центр сцены
   onMount(() => {
     photoRef.lookAt(0, 0, 0);
