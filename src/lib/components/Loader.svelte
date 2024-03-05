@@ -7,8 +7,8 @@
 
 <HTML
   scale={25}
-  center
->
+  position={[-10, 250, -80]}
+  >
   <div class='container'>
     <img alt='logo' src='images/logo.svg' />
     <div class="loader"></div>
