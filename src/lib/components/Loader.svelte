@@ -6,7 +6,6 @@
 <div class='container'>
   <img alt='logo' src='images/logo.svg' />
   <div class="loader"></div>
-
 </div>
 
 <style>

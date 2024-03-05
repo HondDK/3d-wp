@@ -19,8 +19,6 @@
 
     <Canvas autoRender={false}>
       <Renderer/>
-      <Suspense>
-        <Loader slot='fallback'/>
         <Scene
           {enableDamping}
           {autoRotate}
@@ -31,7 +29,6 @@
           {maxPolarAngle}
           {enableZoom}
         />
-        </Suspense>
     </Canvas>
 
 
