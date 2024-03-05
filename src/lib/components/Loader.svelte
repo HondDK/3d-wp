@@ -6,7 +6,8 @@
 </script>
 
 <HTML
-  scale={15}
+  scale={25}
+  center
 >
   <div class='container'>
     <img alt='logo' src='images/logo.svg' />
