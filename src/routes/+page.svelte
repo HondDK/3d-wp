@@ -1,9 +1,10 @@
 <script lang="ts">
   import App from '$lib/components/App.svelte'
+  import Loader from '$lib/components/Loader.svelte';
 </script>
 
 <div>
-  <App />
+  <App/>
 </div>
 
 <style>

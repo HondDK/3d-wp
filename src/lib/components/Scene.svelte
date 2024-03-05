@@ -3,10 +3,7 @@
   import Tulips from '$lib/components/models/Tulips.svelte';
   import Photos from '$lib/components/Photos.svelte';
 
-
-
   const PHOTO_RADIUS = 400
-
 
   const photos = [
 		'./images/1.jpeg',
@@ -42,12 +39,11 @@
   });
 </script>
 
-
   <Stars />
-
-  <!--{#each photos as photo, index (photo + Math.random())}-->
-  <!--  <Photos position={positions[index]} imageSrc={photo}/>-->
-  <!--{/each}-->
-
   <Tulips/>
+
+  {#each photos as photo, index (photo + Math.random())}
+    <Photos position={positions[index]} imageSrc={photo}/>
+  {/each}
+
 ```

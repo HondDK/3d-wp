@@ -30,7 +30,7 @@
     transform
     {position}
   >
-    <img width='250' alt='aboba' src={imageSrc} /> <!-- когда изображение загружено, устанавливаем isLoading в false -->
+    <img width='250' alt='aboba' src={imageSrc} />
   </HTML>
 
 <style>
