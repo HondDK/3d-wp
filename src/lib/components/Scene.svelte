@@ -4,7 +4,7 @@
   import Photos from '$lib/components/Photos.svelte';
   import { onMount } from 'svelte';
 
-  const PHOTO_RADIUS = 330
+  const PHOTO_RADIUS = 300
 
   const photos = [
 		'./images/1.jpeg',
