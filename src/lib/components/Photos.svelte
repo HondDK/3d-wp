@@ -1,5 +1,5 @@
 <script>
-  import {HTML, useSuspense} from "@threlte/extras";
+  import {HTML, Suspense, useSuspense} from "@threlte/extras";
   import {onMount} from "svelte";
   export let position = [0, 0, 0];
 
@@ -24,14 +24,16 @@
 </script>
 ;,
 
-  <HTML
-    on:create={({ ref }) => photoRef = ref}
-    scale={15}
-    transform
-    {position}
-  >
-    <img width='250' alt='aboba' src={imageSrc} />
-  </HTML>
+  <Suspense final>
+    <HTML
+      on:create={({ ref }) => photoRef = ref}
+      scale={15}
+      transform
+      {position}
+    >
+      <img width='250' alt='aboba' src={imageSrc} />
+    </HTML>
+  </Suspense>
 
 <style>
 		img{

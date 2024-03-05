@@ -32,8 +32,6 @@
             './images/22.jpeg',
   ]
 
-  let tulipsLoaded = false;
-
   // позиции для фотографий
   $: positions = photos.map((_, index, array) => {
     const angle = (index / array.length) * 2 * Math.PI;
@@ -45,7 +43,7 @@
 </script>
 
 <Stars />
-<Tulips on:loaded={() => tulipsLoaded = true}/>
+<Tulips/>
 
 {#if suspended}
   {#each photos as photo, index (photo + Math.random())}
