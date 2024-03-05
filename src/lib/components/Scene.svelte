@@ -1,11 +1,10 @@
 <script lang="ts">
   import { T } from '@threlte/core'
-  import { OrbitControls, Stars, Suspense } from '@threlte/extras';
+  import { OrbitControls, Stars } from '@threlte/extras';
   import Tulips from '$lib/components/models/Tulips.svelte';
   import { onMount } from 'svelte';
   import { PerspectiveCamera } from 'three';
   import Photos from '$lib/components/Photos.svelte';
-  import Loader from '$lib/components/Loader.svelte';
 
   export let autoRotate: boolean
   export let enableDamping: boolean
@@ -89,13 +88,11 @@
     {enableZoom}
   />
 </T.PerspectiveCamera>
+
 <Stars />
 
-<Suspense>
-  <Loader slot='fallback'/>
+{#each photos as photo, index (photo + Math.random())}
+  <Photos position={positions[index]} imageSrc={photo}/>
+{/each}
 
-  {#each photos as photo, index (photo + Math.random())}
-    <Photos position={positions[index]} imageSrc={photo}/>
-  {/each}
-  <Tulips/>
-</Suspense>
+<Tulips/>

@@ -1,4 +1,8 @@
 
+<script>
+  console.log(123)
+</script>
+
 <div class='container'>
   <img alt='logo' src='images/logo.svg' />
   <div class="loader"></div>
