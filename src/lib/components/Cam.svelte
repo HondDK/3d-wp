@@ -36,6 +36,8 @@
   <T.PerspectiveCamera
   makeDefault
   position={[0, 0, 0]}
+  maxPolarAngle={15}
+
   on:create={({ ref }) => {
     cameraRef = ref;
   }}

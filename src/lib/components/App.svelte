@@ -11,13 +11,13 @@
   let rotateSpeed: number = 1
   let zoomToCursor: boolean = false
   let zoomSpeed: number = 1
-  let minPolarAngle: number = 0
-  let maxPolarAngle: number = Math.PI
+  let minPolarAngle: number = 1
+  let maxPolarAngle: number = 1
   let enableZoom: boolean = false
 
 </script>
 
-    <Canvas renderMode={'always'} autoRender={false}>
+    <Canvas style='position: absolute' renderMode={'always'} autoRender={false}>
       <Renderer/>
      <Cam
        {enableDamping}
