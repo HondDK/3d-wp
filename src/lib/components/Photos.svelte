@@ -43,7 +43,8 @@
 
 <style>
    img{
-
+       border-radius: 16px;
+       box-shadow: 0 0 5px rgba(255,255,255,0.3);
    }
 </style>
 ```
