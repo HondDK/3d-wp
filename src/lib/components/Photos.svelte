@@ -40,3 +40,10 @@
     >
     <img width='250' alt='aboba' src={imageSrc} in:blur={{ duration: loaded ? 1000 : 0 }} on:load={handleLoad} />
     </HTML>
+
+<style>
+   img{
+
+   }
+</style>
+```
