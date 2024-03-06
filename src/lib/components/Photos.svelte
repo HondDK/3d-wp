@@ -38,12 +38,5 @@
       transform
       {position}
     >
-    <img width='250' alt='aboba' src={imageSrc} in:blur={{ duration: loaded ? 1000 : 0 }} on:load={handleLoad} />    </HTML>
-
-<style>
-    img{
-        -webkit-transform: rotateX(180deg);
-        -webkit-backface-visibility: hidden;
-        -webkit-transform: translate3d(0,0,0);
-    }
-</style>
+    <img width='250' alt='aboba' src={imageSrc} in:blur={{ duration: loaded ? 1000 : 0 }} on:load={handleLoad} />
+    </HTML>

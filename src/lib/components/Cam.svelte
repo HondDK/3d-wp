@@ -20,12 +20,12 @@
 
   // отдаление камеры при onMount
   onMount(() => {
-	  const interval = setInterval(() => {
-		  if (counter < CAMERA_DISTANCE) {
-			  counter += 1;
-		  } else {
-			  clearInterval(interval);
-		  }}, 7); // 1000 ms = 1 second
+      const interval = setInterval(() => {
+        if (counter < CAMERA_DISTANCE) {
+            counter += 1;
+          } else {
+            clearInterval(interval);
+          }}, 7); // 1000 ms = 1 second
   });
 
   $: if (cameraRef) {

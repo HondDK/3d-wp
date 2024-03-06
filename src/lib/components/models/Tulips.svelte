@@ -66,6 +66,5 @@
   {:catch error}
     <slot name="error" {error} />
   {/await}
-
   <slot {ref} />
 </T>
