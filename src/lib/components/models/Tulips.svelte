@@ -9,10 +9,9 @@
 
 <script lang="ts">
   import type * as THREE from 'three'
-  import { Group, Material } from 'three';
+  import { Group } from 'three';
   import { T, type Props, type Events, type Slots, forwardEventHandlers } from '@threlte/core'
-  import { createTransition, useGltf, useSuspense } from '@threlte/extras';
-  import { cubicOut } from 'svelte/easing';
+  import { useGltf, useSuspense } from '@threlte/extras';
 
   type $$Props = Props<THREE.Group>
   type $$Events = Events<THREE.Group>

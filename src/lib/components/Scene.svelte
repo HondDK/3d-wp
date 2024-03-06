@@ -58,7 +58,7 @@
 </script>
 
 <Billboard transition={fade} lockZ>
-  <Text transition={fade} color='#FFDFDF' position={[-145, 280, 0]} scale={200} text='С праздником, дорогие дамы!'/>
+  <Text font='font/foglihtenno06.ttf' transition={fade} color='#FFDFDF' position={[-145, 280, 0]} scale={200} text='С праздником, дорогие дамы!'/>
 </Billboard>
 
 <Stars/>
