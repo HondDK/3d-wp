@@ -4,6 +4,12 @@
   import { fade } from 'svelte/transition';
   export let position = [0, 0, 0];
 
+  let loaded = false;
+
+  function handleLoad() {
+    loaded = true;
+  }
+
   export let imageSrc = ''
   const suspend = useSuspense();
   let photoRef
@@ -33,8 +39,7 @@
       transform
       {position}
     >
-      <img width='250' alt='aboba' src={imageSrc} in:fade={{ duration: 1000 }} />
-    </HTML>
+    <img width='250' alt='aboba' src={imageSrc} in:fade={{ duration: loaded ? 1000 : 0 }} on:load={handleLoad} />    </HTML>
 
 <style>
     img{
