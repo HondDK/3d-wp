@@ -9,9 +9,10 @@
 
 <script lang="ts">
   import type * as THREE from 'three'
-  import { Group } from 'three'
+  import { Group, Material, Mesh } from 'three';
   import { T, type Props, type Events, type Slots, forwardEventHandlers } from '@threlte/core'
-  import { useGltf, useSuspense } from '@threlte/extras';
+  import { createTransition, useGltf, useSuspense } from '@threlte/extras';
+  import { cubicOut } from 'svelte/easing';
   import { fade } from 'svelte/transition';
 
   type $$Props = Props<THREE.Group>
@@ -45,15 +46,27 @@
 
   const pointSize = 500
 
+  const fly = createTransition<Mesh>((ref) => {
+	  return {
+		  tick(t) {
+			  // t is [0,1] and needs to be converted to [1,0]
+			  t = 1 - t
+			  ref.position.y = t
+		  },
+		  easing: cubicOut,
+		  duration: 400
+	  }
+  })
+
 </script>
 
-<T is={ref} dispose={false} {...$$restProps} bind:this={$component}>
+<T in={fly} is={ref} dispose={false} {...$$restProps} bind:this={$component}>
   {#await gltf}
     <slot name="fallback" />
   {:then gltf}
     <T.Group transition={fade} rotation={[-Math.PI / 2, 0, 0]} position={[-10, 250, -80]} scale={0.5}>
       <T.Points scale={pointSize} geometry={gltf.nodes.Object_2.geometry} material={gltf.materials['Scene_-_Root']} />
-      <T.Points scale={pointSize} geometry={gltf.nodes.Object_3.geometry} material={gltf.materials['Scene_-_Root']} />
+      <T.Points scale={pointSize} geometry={gltf.nodes.Object_3.geometry} material={gltf.materials['Scene_-_Root']} />;
       <T.Points scale={pointSize} geometry={gltf.nodes.Object_4.geometry} material={gltf.materials['Scene_-_Root']} />
       <T.Points scale={pointSize} geometry={gltf.nodes.Object_5.geometry} material={gltf.materials['Scene_-_Root']} />
       <T.Points scale={pointSize} geometry={gltf.nodes.Object_6.geometry} material={gltf.materials['Scene_-_Root']} />
