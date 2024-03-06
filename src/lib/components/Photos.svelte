@@ -33,7 +33,7 @@
       transform
       {position}
     >
-      <img width='250' alt='aboba' src={imageSrc} />
+      <img width='250' alt='aboba' src={imageSrc} in:fade={{ duration: 1000 }} />
     </HTML>
 
 <style>
