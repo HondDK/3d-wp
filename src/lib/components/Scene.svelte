@@ -58,7 +58,7 @@
 </script>
 
 <Billboard transition={fade} lockZ>
-  <Text transition={fade} color='#FFDFDF' position={[-80, 280, 0]} scale={500} text='aboba'/>
+  <Text transition={fade} color='#FFDFDF' position={[-145, 280, 0]} scale={200} text='С праздником, дорогие дамы!'/>
 </Billboard>
 
 <Stars/>
