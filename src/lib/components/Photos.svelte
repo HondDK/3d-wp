@@ -1,7 +1,7 @@
 <script lang="ts">
   import {HTML, useSuspense} from "@threlte/extras";
   import {onMount} from "svelte";
-  import { fade } from 'svelte/transition';
+  import { blur } from 'svelte/transition';
   export let position = [0, 0, 0];
 
   let loaded = false;
@@ -31,7 +31,6 @@
 </script>
 
     <HTML
-      transition={fade}
       pointerEvents={'inherit'}
       sprite
       on:create={({ ref }) => photoRef = ref}
@@ -39,7 +38,7 @@
       transform
       {position}
     >
-    <img width='250' alt='aboba' src={imageSrc} in:fade={{ duration: loaded ? 1000 : 0 }} on:load={handleLoad} />    </HTML>
+    <img width='250' alt='aboba' src={imageSrc} in:blur={{ duration: loaded ? 1000 : 0 }} on:load={handleLoad} />    </HTML>
 
 <style>
     img{
