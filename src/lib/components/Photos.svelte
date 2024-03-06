@@ -1,6 +1,6 @@
 <script lang="ts">
-  import {HTML, useSuspense} from "@threlte/extras";
-  import {onMount} from "svelte";
+  import { HTML, useSuspense } from "@threlte/extras";
+  import { onMount } from "svelte";
   import { blur } from 'svelte/transition';
   export let position = [0, 0, 0];
 

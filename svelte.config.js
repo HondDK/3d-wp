@@ -21,7 +21,7 @@ const config = {
 			strict: true
 		}),
 		paths: {
-			base: '/3dvalent'
+			base: '/3d-wp'
 		},
 	}
 };
