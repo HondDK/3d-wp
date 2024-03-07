@@ -1,9 +1,11 @@
 <script lang="ts">
   import App from '$lib/components/App.svelte'
+  import Analytics from '$lib/Analytics.svelte';
 </script>
 
 <div>
   <App/>
+  <Analytics />
 </div>
 
 <style>
